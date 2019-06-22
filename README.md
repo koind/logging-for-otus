@@ -19,15 +19,15 @@ Package usage example.
 package main
 
 import (
-	"github.com/koind/logging-for-otus"
+	logging "github.com/koind/logging-for-otus"
 	"bytes"
 )
 
 func main() {
 	var b bytes.Buffer
     
-	hwAccepted := logging_for_otus.NewHwAccepted(1, 25)
-	logging_for_otus.LogOtusEvent(hwAccepted, &b)
+	hwAccepted := logging.NewHwAccepted(1, 25)
+	logging.LogOtusEvent(hwAccepted, &b)
 	
 	println(b.String()) // 2019-06-23 accepted 1 25 
 }
