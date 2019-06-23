@@ -48,5 +48,8 @@ func (s HwSubmitted) LogMessage() string {
 }
 
 func LogOtusEvent(e OtusEvent, w io.Writer) {
-	w.Write([]byte(e.LogMessage()))
+	_, err := w.Write([]byte(e.LogMessage()))
+	if err != nil {
+		fmt.Println(err)
+	}
 }
